@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Nová poptávka</title>
+</head>
+<body>
+    <h1>Zadat poptávku</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Odeslat</button>
+    </form>
+</body>
+</html>

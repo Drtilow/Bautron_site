@@ -19,7 +19,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Přidáš později:
-    # 'poptavky',
+    'poptavky',
     # 'accounts',
     # 'pages',
 ]
@@ -41,7 +41,7 @@ ROOT_URLCONF = 'BAUTRON_SITE.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -53,6 +53,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'BAUTRON_SITE.wsgi.application'
 
