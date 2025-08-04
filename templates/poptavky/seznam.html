@@ -1,8 +1,9 @@
 <h1>Seznam poptávek</h1>
 <ul>
   {% for p in poptavky %}
-    <li>{{ p.jmeno }} - {{ p.email }} - {{ p.popis }}</li>
+    <li>{{ p.jmeno }} - {{ p.email }} - {{ p.telefon }} - {{ p.popis }}</li>
   {% empty %}
     <li>Žádné poptávky</li>
   {% endfor %}
 </ul>
+<a href="{% url 'formular_poptavky' %}">+ Nová poptávka</a>
