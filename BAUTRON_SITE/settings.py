@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 
+
 # Základní adresář projektu
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -93,6 +94,9 @@ USE_TZ = True
 # Statické soubory
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Přesměrování pro login/logout
 LOGIN_REDIRECT_URL = 'home'

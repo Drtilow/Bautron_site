@@ -8,8 +8,8 @@
     <nav>
         <ul>
             <li><a href="{% url 'seznam_poptavek' %}">Poptávky</a></li>
-            <li><a href="/reference/">Reference</a></li>
-            <li><a href="/rozpocty/objem/">Výpočet prostoru</a></li>
+            <li><a href="{% url 'reference_list' %}">Reference</a></li>
+            <li><a href="{% url 'obestaveny_prostor' %}">Výpočet prostoru</a></li>
 
             {% if user.is_authenticated %}
                 <li><a href="{% url 'logout' %}">Odhlásit se ({{ user.username }})</a></li>

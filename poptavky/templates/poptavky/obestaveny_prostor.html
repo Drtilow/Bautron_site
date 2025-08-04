@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Výpočet obestavěného prostoru{% endblock %}
+
+{% block content %}
+<h1>Výpočet obestavěného prostoru</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <label for="sirka">Šířka (m):</label>
+    <input type="number" step="any" name="sirka" required><br>
+    
+    <label for="delka">Délka (m):</label>
+    <input type="number" step="any" name="delka" required><br>
+    
+    <label for="vyska">Výška (m):</label>
+    <input type="number" step="any" name="vyska" required><br>
+    
+    <button type="submit">Vypočítat</button>
+</form>
+
+{% if objem %}
+    <p><strong>Obestavěný prostor:</strong> {{ objem }} m³</p>
+{% endif %}
+{% endblock %}
