@@ -99,8 +99,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Přesměrování pro login/logout
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'seznam_poptavek'
+LOGOUT_REDIRECT_URL = 'seznam_poptavek'
 LOGIN_URL = 'login'
 
 # Výchozí typ primárního klíče
