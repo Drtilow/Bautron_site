@@ -29,3 +29,6 @@ def obestaveny_prostor(request):
     return render(request, 'poptavky/obestaveny_prostor.html', {"objem": objem})
 def o_nas(request):
     return render(request, 'poptavky/o_nas.html')
+    
+def zasady_ochrany(request):
+    return render(request, 'poptavky/zasady_ochrany.html')

@@ -1,8 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Bautron{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <nav>
@@ -11,9 +13,7 @@
             <li><a href="{% url 'reference_list' %}">Reference</a></li>
             <li><a href="{% url 'obestaveny_prostor' %}">Výpočet prostoru</a></li>
             <li><a href="{% url 'o_nas' %}">O nás</a></li>
-
-
-
+            <li><a href="{% url 'zasady' %}">Zásady ochrany</a></li>
             {% if user.is_authenticated %}
                 <li><a href="{% url 'logout' %}">Odhlásit se ({{ user.username }})</a></li>
             {% else %}
@@ -22,10 +22,18 @@
         </ul>
     </nav>
 
-    <hr>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
 
-    {% block content %}
-    <!-- Obsah stránky -->
-    {% endblock %}
+    <footer>
+        <p>&copy; 2025 Bautron</p>
+        <ul>
+            <li><a href="{% url 'zasady' %}">Zásady ochrany</a></li>
+            <li><a href="{% url 'o_nas' %}">O nás</a></li>
+
+        </ul>
+    </footer>
+    
 </body>
 </html>

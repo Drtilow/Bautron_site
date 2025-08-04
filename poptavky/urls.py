@@ -7,5 +7,7 @@ urlpatterns = [
     path('nova/', views.formular_poptavky, name='formular_poptavky'),
     path('obestaveny_prostor/', views.obestaveny_prostor, name='obestaveny_prostor'),
     path("o-nas/", views.o_nas, name="o_nas"),
+    path("zasady-ochrany/", views.zasady_ochrany, name="zasady_ochrany"),
+
 
 ]
