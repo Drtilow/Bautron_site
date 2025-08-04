@@ -1,9 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Seznam poptávek{% endblock %}
+
+{% block content %}
 <h1>Seznam poptávek</h1>
-<ul>
+<table border="1">
+  <tr>
+    <th>Jméno</th>
+    <th>E-mail</th>
+    <th>Telefon</th>
+    <th>Popis</th>
+    <th>Odesláno</th>
+  </tr>
   {% for p in poptavky %}
-    <li>{{ p.jmeno }} - {{ p.email }} - {{ p.telefon }} - {{ p.popis }}</li>
+  <tr>
+    <td>{{ p.jmeno }}</td>
+    <td>{{ p.email }}</td>
+    <td>{{ p.telefon }}</td>
+    <td>{{ p.popis }}</td>
+    <td>{{ p.odeslano|date:"d.m.Y H:i" }}</td>
+  </tr>
   {% empty %}
-    <li>Žádné poptávky</li>
+  <tr><td colspan="5">Žádné poptávky</td></tr>
   {% endfor %}
-</ul>
+</table>
+
 <a href="{% url 'formular_poptavky' %}">+ Nová poptávka</a>
+{% endblock %}

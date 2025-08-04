@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Výpočet obestavěného prostoru{% endblock %}
+
+{% block content %}
+<h1>Kalkulačka obestavěného prostoru</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Spočítat objem</button>
+</form>
+
+{% if vysledek %}
+    <h2>Výsledek:</h2>
+    <p>Objem stavby: <strong>{{ vysledek }} m³</strong></p>
+{% endif %}
+{% endblock %}

@@ -22,7 +22,8 @@ INSTALLED_APPS = [
     'poptavky',
     # 'accounts',
     'uzivatele',
-    # 'pages',
+    # reference
+    'reference',
 ]
 
 # Middleware

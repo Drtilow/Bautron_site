@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Bautron{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'seznam_poptavek' %}">Poptávky</a></li>
+            <li><a href="/reference/">Reference</a></li>
+            <li><a href="/rozpocty/objem/">Výpočet prostoru</a></li>
+
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}">Odhlásit se ({{ user.username }})</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Přihlásit se</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <hr>
+
+    {% block content %}
+    <!-- Obsah stránky -->
+    {% endblock %}
+</body>
+</html>

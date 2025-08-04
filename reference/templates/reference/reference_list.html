@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Reference{% endblock %}
+
+{% block content %}
+<h1>Naše realizované stavby</h1>
+
+{% for ref in reference %}
+    <div style="margin-bottom: 2em;">
+        <h2>{{ ref.nazev }}</h2>
+        <p><strong>Typ:</strong> {{ ref.get_typ_display }}</p>
+        <p><strong>Datum realizace:</strong> {{ ref.datum_realizace|date:"d.m.Y" }}</p>
+        <p>{{ ref.popis }}</p>
+
+        {% if ref.obrazek %}
+            <img src="{{ ref.obrazek.url }}" alt="obrázek stavby" width="400">
+        {% endif %}
+    </div>
+    <hr>
+{% empty %}
+    <p>Zatím nemáme žádné reference.</p>
+{% endfor %}
+{% endblock %}

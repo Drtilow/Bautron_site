@@ -7,5 +7,7 @@ urlpatterns = [
     path("poptavky/", include("poptavky.urls")),
     path("", lambda request: redirect("seznam_poptavek", permanent=False)),  # přesměrování na /poptavky/
     path('ucet/', include('uzivatele.urls')),
+    path('reference/', include('reference.urls')),
+
 
 ]
