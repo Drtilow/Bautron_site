@@ -13,6 +13,9 @@ def formular_poptavky(request):
     return render(request, 'poptavky/formular.html', {'form': form})
 from .models import Poptavka
 
+from django.contrib.auth.decorators import login_required
+
+@login_required
 def seznam_poptavek(request):
     poptavky = Poptavka.objects.all().order_by('-odeslano')
     return render(request, 'poptavky/seznam.html', {'poptavky': poptavky})

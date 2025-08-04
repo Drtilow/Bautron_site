@@ -1,0 +1,7 @@
+<h1>Přihlášení</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Přihlásit</button>
+</form>
+<a href="{% url 'registrace' %}">Nemáš účet? Zaregistruj se</a>

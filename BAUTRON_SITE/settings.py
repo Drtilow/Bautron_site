@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     # Přidáš později:
     'poptavky',
     # 'accounts',
+    'uzivatele',
     # 'pages',
 ]
 
