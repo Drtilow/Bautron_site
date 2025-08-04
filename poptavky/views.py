@@ -27,3 +27,5 @@ def obestaveny_prostor(request):
         vyska = float(request.POST.get("vyska", 0))
         objem = round(sirka * delka * vyska, 2)
     return render(request, 'poptavky/obestaveny_prostor.html', {"objem": objem})
+def o_nas(request):
+    return render(request, 'poptavky/o_nas.html')
